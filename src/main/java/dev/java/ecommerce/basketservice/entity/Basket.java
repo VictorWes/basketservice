@@ -1,6 +1,7 @@
 package dev.java.ecommerce.basketservice.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import dev.java.ecommerce.basketservice.service.ProductService;
 import jdk.jshell.Snippet;
 import lombok.*;
@@ -29,6 +30,11 @@ public class Basket {
     private List<Product> products;
 
     private Status status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private PaymentMethod payMentMethod;
+
+
 
     public void calculateTotalPrice(){
         this.totalPrice = products.stream()
