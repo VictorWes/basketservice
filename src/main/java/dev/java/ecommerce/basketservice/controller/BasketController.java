@@ -43,4 +43,9 @@ public class BasketController {
 
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletBasket(@PathVariable String id){
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
 }
